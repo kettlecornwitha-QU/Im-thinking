@@ -1,0 +1,16 @@
+title: "I'm thinking about stuff"
+email: kettle.corn.with.a.Q.U@gmail.com
+description: >-
+  Do you ever think about stuff? Because I do.
+baseurl: ""
+url: "https://kettlecornwitha-QU.github.io/Im-thinking"
+remote_theme: pages-themes/minimal@v0.2.0
+markdown: kramdown
+kramdown:
+    math_engine: mathjax
+    input: GFM
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-remote-theme
+paginate: 5
