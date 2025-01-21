@@ -10,7 +10,6 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    {% include head-custom.html %}
   </head>
   <body>
     <div class="wrapper">
@@ -22,6 +21,10 @@
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
+        
+        <nav class="site-links">
+          <p><a href="/about/">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="/">Stuff</a></p>
+        </nav>
 
         {% if site.show_downloads %}
         <ul class="downloads">
@@ -36,11 +39,14 @@
       {{ content }}
 
       </section>
-      <footer>
-        <footer class="site-footer" style="white-space: nowrap;">
-  <p>Feel free to <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">contact me</a> if you have any questions or feedback.</p>
+<!--
+<footer>
+  <footer class="site-footer" style="white-space: nowrap;">
+    <p><a href="/about/">About Me</a></p>
+    <p>Feel free to <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">contact me</a> if you have any questions or feedback.</p>
+  </footer>
 </footer>
-      </footer>
+-->
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>

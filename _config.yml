@@ -1,16 +1,19 @@
 title: "I'm thinking about stuff"
 email: kettle.corn.with.a.Q.U@gmail.com
 description: >-
-  Do you ever think about stuff? Because I do.
-baseurl: "/Im-thinking"
+  Do you ever think about stuff? Because I sure do.
+baseurl: ""
 url: "https://kettlecornwitha-QU.github.io"
 theme: minimal
 markdown: kramdown
+include:
+  - papers
 kramdown:
     math_engine: mathjax
     input: GFM
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-remote-theme
-paginate: 5
+  - jekyll-seo-tag
+sass:
+  style: compressed
