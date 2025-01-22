@@ -23,7 +23,7 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
         
         <nav class="site-links">
-          <p><a href="/about/">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="/">Stuff</a></p>
+          <p><a href="{{ '/about' | relative_url }}">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="{{ '/' | relative_url }}">Stuff</a></p>
         </nav>
 
         {% if site.show_downloads %}
