@@ -4,7 +4,7 @@ description: >-
   Do you ever think about stuff? Because I sure do.
 baseurl: ""
 url: "https://kettlecornwitha-QU.github.io/Im-thinking/"
-theme: minimal
+remote_theme: pages-themes/minimal
 markdown: kramdown
 include:
   - papers
