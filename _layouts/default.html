@@ -21,11 +21,11 @@
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
-        
+<!--        
         <nav class="site-links">
           <p><a href="{{ '/about' | relative_url }}">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="{{ '/' | relative_url }}">Stuff</a></p>
         </nav>
-
+-->
         {% if site.show_downloads %}
         <ul class="downloads">
           <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
@@ -39,14 +39,13 @@
       {{ content }}
 
       </section>
-<!--
+
 <footer>
   <footer class="site-footer" style="white-space: nowrap;">
-    <p><a href="/about/">About Me</a></p>
-    <p>Feel free to <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">contact me</a> if you have any questions or feedback.</p>
+    <p><a href="{{ '/about' | relative_url }}">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="{{ '/' | relative_url }}">Stuff</a></p>
   </footer>
 </footer>
--->
+
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
