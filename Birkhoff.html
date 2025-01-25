@@ -1,9 +1,68 @@
 ---
-layout: default
+layout: paper
 title: Birkhoff and Schwarzschild
 ---
 
 <h1>Birkhoff and Schwarzschild</h1>
 <p>
     <a href="{{ '/papers/Birkhoff.pdf' | relative_url }}" target="_blank">View the PDF</a>
+</p>
+
+<p>
+We want to find the most general vacuum solution to the Einstein field equations that corresponds to a spacetime which is spherically symmetric. First thing we should do is flesh out what we mean by ''spherically symmetric''.  We'll start with a simple 2-sphere, which, with standard spherical coordinates, has the line element \( ds^2 = \rho^2 (d\theta^2 + \sin^2 \theta ~ d\phi^2 ) \).  (And from here on, we will use the standard abbreviated notation \(d\Omega^2 \equiv d\theta^2 + \sin^2 \theta ~ d\phi^2\).)  Normally, instead of \(\rho^2\) we would use \(r^2\) as the coefficient for the angular element \(d\Omega^2\), but we carry certain associations with \(r\), namely, it ought to represent the distance from any point on the sphere to the center.  This idea, however, will quickly lose its relevance once we start thinking of higher dimensional curved manifolds, and it will behoove us to forget it.  What <i>will</i> be relevant to us will be how we can define \(\rho\) in terms of circumference and surface area of the sphere.  For a given 2-sphere with circumference \(C\) and surface area \(S\), we can say that \(\rho := C/2 \pi = \sqrt{S/4 \pi}\).
+</p>
+<p>
+We already established the angular coordinates \(\theta\) and \(\phi\), so let's introduce the other two: \(r'\) and \(t'\) (primed, of course, because we'll be performing a few coordinate switcheroos).  So by ''spherically symmetric spacetime'', we simply mean that at each distinct pair of values of our non-angular coordinates, whatever they may be, we have a distinct 2-sphere with the aforementioned metric.  The coefficient \(\rho\), whereas before simply represented a number, would now be some function of \(r'\) and \(t'\).  And it's already time for our first switcheroo: let's just <i>define</i> a new coordinate \(r\) such that for every 2-sphere, \(r := C/2 \pi = \sqrt{S/4 \pi}\) (we're using \(r\) now, but again, don't get any crazy ideas about using this coordinate to tell you the distance from some center).  
+</p>
+<p>
+One thing we can reasonably insist upon given the phrase ''spherically symmetric'' is rotational invariance.  This doesn't <i>have</i> to apply to our non-angular coordinate basis vectors since coordinates have no physical significance necessarily, but let's make things simple for ourselves and say that it does apply.  This means that \(\partial_{t'}\) and \(\partial_r\) must be either everywhere orthogonal or everywhere non-orthogonal to our spheres.  If they are everywhere non-orthogonal, then we should be able to use their projections into the tangent bundle of any sphere to define a non-vanishing vector field on that sphere, but the hairy ball theorem says that this is impossible.  This means that if we want our non-angular coordinates to be rotationally invariant, then they must also be orthogonal to the spheres.  This is just a fancy way of saying that we are choosing our coordinates such that the angular coordinates on the spheres don't roll around as we vary \(r\) or \(t'\), and therefore \(g_{t' \theta} = g_{t' \phi} = g_{r \theta} = g_{r \phi} = 0\).  This leaves us with a line element of
+\[ ds^2 ~ = ~ -j ~ (dt')^2 ~ + ~ 2k ~ dt' ~ dr ~ + ~ l ~ dr^2 ~ + ~ r^2 ~ d\Omega^2
+\] where \(j, k,\) and \(l\) are unknown functions of \(t'\) and \(r\).  But we can make things even simpler with a second coordinate switcheroo: we define coordinate \(\tilde{t}\) such that \(d\tilde{t} := \sqrt{j/f} ~ dt' - k / \sqrt{jf} ~ dr\) and define \(h\) to be \(h := l + k^2 / j\), where \(f\) and \(h\) will be unknown functions of \(\tilde{t}\) and \(r\).  Using this transformation gives us
+\[ ds^2 ~ = ~ -f(\tilde{t},r) ~ d \tilde{t}^2 ~ + ~ h(\tilde{t},r) ~ dr^2 ~ + ~ r^2 ~ d \Omega^2
+\]
+Note that nothing we've done yet has placed any restriction on the signs of \(f\) or \(h\).  The only two restrictions so far are that the signs of \(f\) and \(j\) match, and that \(f \neq 0\).
+</p>
+<p>
+If we calculate the mixed-index Einstein tensor from this metric, we get a lot of crap, but there are three components that will be useful to us, and those are these: 
+\[ G^{\tilde{t}}_{~ r} = \frac{\partial_{\tilde{t}} h}{rh^2} = 0
+\]
+\[ G^{\tilde{t}}_{~ \tilde{t}} = \frac{h - h^2 - r \cdot \partial_r h}{r^2 h^2} = 0
+\]
+\[ G^r_{~ r} = \frac{f - fh + r \cdot \partial_r f}{r^2 fh} = 0
+\]
+I set them equal to zero since we want this to be a vaccum solution of course. \(G^{\tilde{t}}_{~ r}\) tells us that \(\partial_{\tilde{t}} h = 0\) which means \(h\) is not dependent on \(\tilde{t}\).  Huh, weird.  Next, using \(G^{\tilde{t}}_{~ \tilde{t}}\), we can have Wolfram Alpha solve the differential equation \(h - h^2 - r \cdot \partial_r h = 0\), then we can look at the steps that it used to solve it in order to feel better about ourselves, then see that \(h(r) = (1 - a/r)^{-1}\) where \(a\) is some yet unspecified constant (it could be positive or negative&mdash; I just chose a minus sign because I already know it will be there at the end).  Using this and \(G^r_{~ r}\), we get the differential equation \(r(r - a) \cdot \partial_r f - af = 0\), and solving this gives us \(f(\tilde{t},r) = b(\tilde{t}) \cdot (1 - a/r)\) where \(b\) is some unknown function of \(\tilde{t}\).  We must insist that \(b(\tilde{t})\) is positive so that we don't have a spacetime that at a set of points with some value of \(\tilde{t}\) suddenly switches from a Lorentzian to a Riemannian manifold with a positive definite metric, but otherwise there are no constraints on its values.  So now we have the line element: 
+\[ ds^2 = -b(\tilde{t}) \cdot (1 - a/r) d \tilde{t}^2 + (1 - a/r)^{-1} dr^2 + r^2 d \Omega^2
+\]
+</p>
+<p>
+Let's now re-examine how specific we've been so far in how we've defined our coordinates.  \(\theta\) and \(\phi\) are the standard angular coordinates on a 2-sphere.  No ambiguity there.  We explicitly defined \(r\) to be the circumference of any given 2-sphere divided by \(2\pi\), so again, no ambiguity there.  What about \(\tilde{t}\)?  We know we defined \(t'\) to be orthogonal to \(\theta\) and \(\phi\), then we performed an ambiguous coordinate transformation to ensure that \(\tilde{t}\) would be orthogonal to \(r\) also, but we really haven't gotten any more specific than that.  The fact that we have this function \(b(\tilde{t})\) in our line element above, which can be <i>any</i> (positive) function, tells us that it doesn't really matter how we stretch or squeeze \(\tilde{t}\) across our manifold&mdash; it will still be spherically symmetric.  On the other hand, there is nothing preventing us from choosing a particular coordinate \(t\) such that \(dt = \sqrt{b} ~ d\tilde{t}\).  This gives us the line element
+\[ ds^2 = -(1 - a/r) dt^2 + (1 - a/r)^{-1} dr^2 + r^2 d \Omega^2
+\]
+So just to explicitly state the surprising fact here: by demanding a vacuum solution to the EFE to simply be spherically symmetric, you can find coordinates that make the metric completely independent of the \(t\) coordinate, which tells us that the spacetime is also static!  More precisely, for \(r > a\), there is a timelike Killing vector field, namely \(\partial_t\).<sup><a href="#footnote1" id="marker1">1</a></sup>  This concludes the proof of Birkhoff's theorem, but we don't like the fact that we don't yet know what the constant \(a\) is for.
+</p>
+<p>
+We can clearly see that if \(a=0\), we are left with standard spherical coordinates on Minkowski spacetime.  This tells us that \(a\) will be a function of some property of the spacetime we might call ''mass''.  It can't really be a function of anything else, given the simplicity of the class of spacetimes that we're examining.  So assuming \(a \neq 0\), our spacetime will obviously be curved, which means there will be a source of gravity (or at least an apparent source). And because of the spherical symmetry and this being a vacuum solution, the source of gravity must be centered on \(r=0\) and must not extend infinitely outward. (Assuming there is an actual source, the validity of our metric would obviously only extend up to the surface of the source.)  We might not yet know how gravity works very close to extremely dense bodies (I mean, we do, but we're assuming the Schwarzschild metric has not yet been discovered because we're discovering it now), but because of Newton, we do know how gravity in the weak-field approximation works.  This means that as \(r\) grows larger, we want the behavior of geodesics to be increasingly well-approximated by good old-fashioned Newtonian gravity, <i>i.e.</i> in a frame at constant \(r\), \(\theta\), and \(\phi\), acceleration of a test mass in the \(r\) direction is equal to \(-M/r^2\), where \(M\) is what we would classically call the mass of the gravitating body (I'm of course using geometrized units where \(G=c=1\)).<sup><a href="#footnote2" id="marker2">2</a></sup>
+</p>
+<p>
+Let's say I drop an apple.  In the moment before release, the apple and I are holding steady at constant \(r\), \(\theta\), and \(\phi\).  In the moment after releasing the apple, per Newton, \(dr/dt\) is still momentarily zero, but \(d^2r/dt^2 = -M/r^2\).  With our line element, and given that \(r\) is large, we have \(d\tau^2 = dt^2\) (at least to a close enough approximation).  This then means that \(d^2r/d\tau^2\) should also equal \(-M/r^2\). We know that \(g_{\mu \nu} u^\mu u^\nu = -1\) for any timelike worldline, and if at this specific moment \(u^r = u^\theta = u^\phi = 0\), that means \(g_{tt} (u^t)^2 = -1\).  Solving for \(u^t\), we get
+\[ u^t = \sqrt{\frac{r}{r-a}}
+\]
+Next, we know that for geodesics:
+\[ \frac{d}{d \tau} u^\mu + \Gamma^\mu_{\alpha \beta} u^\alpha u^\beta = 0
+\]
+and if we're only interested in the \(r\) component of the acceleration, then the only relevant Christoffel symbol is
+\[ \Gamma^r_{tt} = \frac{a(r-a)}{2r^3}
+\]
+which gives us \(du^r/d\tau = -a/2r^2\), and as we said earlier, we want \(du^r/d\tau = -M/r^2\), so solving for \(a\) gives us \(a = 2M\).  Finally, we have the Schwarzschild metric:
+\[ ds^2 = - \left( 1 - \frac{2M}{r} \right) dt^2 + \left( 1 - \frac{2M}{r} \right)^{-1} dr^2 + r^2 d\Omega^2
+\]
+</p>
+
+<!-- Footnotes Section -->
+<hr>
+<p id="footnote1">
+  <sup>1</sup> To be clear, the vector field \(\partial_t\) is of the Killing kind <i>everywhere</i> (except at \(r=0\)), but the vectors are only <i>timelike</i> for \(r > a\).  For \(r < a\), they are spacelike, and null at \(r=a\). <a href="#marker1">↩</a>
+</p>
+<p id="footnote2">
+  <sup>2</sup> You might naively think that if we find what \(a\) ought to be while laboring under the assumption that \(r\) is large means that the result will only be applicable where \(r\) is large, but this is wrong.  Remember, \(a\) is a constant.  It is the same everywhere in our spacetime.  So if we can simply find <i>some</i> place where gravity works in familiar ways and thereby find what \(a\) is there, then by extension we've found what \(a\) is everywhere. <a href="#marker2">↩</a>
 </p>

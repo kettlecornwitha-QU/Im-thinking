@@ -1,9 +1,62 @@
 ---
-layout: default
+layout: paper
 title: Proper vs. Coordinate Time with Constant Acceleration
 ---
 
 <h1>Proper vs. Coordinate Time with Constant Acceleration</h1>
 <p>
     <a href="{{ '/papers/Constant_Acceleration_Travel_Times.pdf' | relative_url }}" target="_blank">View the PDF</a>
+</p>
+
+<p>
+Say there are two inertial points in space at rest with respect to one another, point A and point B, where the distance between those two points is \(d\) (in the inertial rest frame of A and B).  We want to send a voyager from A to B using this acceleration profile: the voyager begins at rest in A's frame, then turns on thrusters programmed to maintain constant proper acceleration in B's direction with magnitude \(\alpha\) from A to AB's midpoint, call it M, where she then reverses thrust to decelerate, still with magnitude \(\alpha\), until she comes to rest at point B.  The question is, for the voyager's departure from A to her arrival at B, how does the elapsed proper time of the voyager compare to A's elapsed coordinate time?
+</p>
+<p>
+The first thing to note is that everything is symmetric around the event where the voyager reverses thrust.  This means we only need to calculate the times to get from A to M, then just multiply by 2.  If we're now only looking at the part of the scenario where the voyager is undergoing truly constant proper acceleration (not just constant magnitude), then we can represent her worldline with a hyperbolic curve, \(\lambda\), parameterized by her proper time, \(\tau\):
+\[x_{\lambda}(\tau) = \frac{1}{\alpha} ( \cosh \alpha \tau - 1)\]
+
+\[t_{\lambda}(\tau) = \frac{1}{\alpha} \sinh \alpha \tau \]
+where \(x\) is in units of lightyears (LY), \(t\) and \(\tau\) are in units of years (yr), and \(\alpha\) has units of LR/\(\text{yr}^2\).  Obviously this removes all the pesky factors of \(c\) from our formulas, but there's an added benefit we'll explore later.
+</p>
+<p>
+Let's double-check to make sure our curve does in fact represent a timelike worldline parameterized by proper time.  We know that \(| \mathbf{u} | \equiv \eta_{\mu \nu} u^{\mu} u^{\nu} = -1\) for any 4-velocity \(\mathbf{u}\), so let's verify that:
+\[ \frac{dx_{\lambda}}{d \tau} \equiv u^x = \sinh \alpha \tau \]
+
+\[ \frac{dt_{\lambda}}{d \tau} \equiv u^t = \cosh \alpha \tau \]
+
+\[ \eta_{\mu \nu} u^{\mu} u^{\nu} = - \cosh^2 \alpha \tau + \sinh^2 \alpha \tau = -1 \]
+OK, good.  We should also verify the claim that this worldline is representative of an object undergoing constant proper acceleration.  First, let's assign an inertial frame to every point on the voyager's worldline such that at that point, the voyager is momentarily at rest in that frame (<i>i.e.</i> \(dx_{\lambda}^i / dt^i |_{\tau = \tau_i} = 0\), where \(x^i\) and \(t^i\) are the coordinates for a given inertial frame \(i\), and \(\tau_i\) is the voyager's proper time at the point on \(\lambda\) to which the frame is assigned).  Since \(d \tau^2 = dt^2 - dx^2\) holds for cartesian coordinates in any inertial frame, and in frame \(i\) when \(\tau = \tau_i\), \(dx^i_\lambda = 0\), we have  \(dt^i = d \tau |_{\tau = \tau_i}\).  It should then be clear that at \(\tau_i\) the proper acceleration of our voyager, \(du^{x^i} / dt^i\), is the same as \(d^2 x_{\lambda}^i / d \tau^2\).  We therefore know that \(\lambda\) is indeed the worldline we're after if we can show that \(d^2 x_{\lambda}^i / d \tau^2 |_{\tau = \tau_i} = \alpha\) for all \(i\).
+</p>
+<p>
+The easiest coordinate transformation to get from A's frame to an acceptable frame \(i\) would be a simple Lorentz transformation.  In keeping with the hyperbolic functions used in our equations for \(\lambda\), we will express the Lorentz transform in terms of rapidity, \(\zeta\), related to relative velocity, \(v\), by \(v = \tanh \zeta\).  This is what the transformation looks like in matrix form:
+\[\Lambda_i = \begin{bmatrix}
+	\cosh \zeta_i & -\sinh \zeta_i \\
+	-\sinh \zeta_i & \cosh \zeta_i
+\end{bmatrix} \]
+If we transform our equations for \(\lambda\) from A's coordinates to an arbitrarily boosted frame \(i\), for the \(x^i\) component, we get
+\[x_{\lambda}^i = \frac{1}{\alpha} \left( \cosh \zeta_i (\cosh \alpha \tau - 1) - \sinh \zeta_i \sinh \alpha \tau \right) \]
+Given how we defined the boosted frames, for any \(i\) we must have \(dx_{\lambda}^i / d \tau |_{\tau = \tau_i} = 0 \).  Differentiating \(x_{\lambda}^i\), we get
+\[ \frac{dx_{\lambda}^i}{d \tau} = \sinh (\alpha \tau - \zeta_i )\]
+So we just set \(\sinh (\alpha \tau_i - \zeta_i) = 0\) which tells us that \(\zeta_i\) must equal \(\alpha \tau_i\).  Differentiating once again gives us the voyager's acceleration at \(\tau_i\).  We get
+\[ \left. \frac{d^2 x_{\lambda}^i}{d \tau^2} \right|_{\tau = \tau_i} = \alpha \cosh (\alpha \tau_i - \zeta_i )\]
+Since \(\zeta_i = \alpha \tau_i\), we see that \(d^2 x_{\lambda}^i / d \tau^2 |_{\tau = \tau_i} = \alpha\), and since we never specified an \(i\), we know that this must hold for all \(i\).
+</p>
+<p>
+The next thing to do is to solve \(x_{\lambda} = d/2\) for \(\tau\) to get the elapsed proper time to get to M, then multiply by 2 to get the total proper time.  We'll call this quantity \(\tau_f\).  Doing this, we get
+\[\tau_{f} = \frac{2}{\alpha} ~ \text{arcosh} (\alpha d/2 +1) \]
+For the coordinate time, we need to find \(t_{\lambda}\) evaluated at \(\tau = \tau_f / 2\), then multiply by 2.  We'll call this quantity \(t_f\).  Doing this, we get
+\[t_{f} = \frac{1}{\alpha} \sqrt{\alpha d ( \alpha d + 4)} \]
+</p>
+<p>
+So there we have it.  But we can make the formulas look even nicer by employing some practical application using the units we chose.  It just so happens that \(1 ~ \text{LY} / \text{yr}^2 \approx 9.5 ~ \text{m} / \text{s}^2\) which is within 3% of Earth's actual surface gravitational acceleration.  So if we make the voyager's trip comfortable by setting \(\alpha = 1\), we then have:
+
+\[x_{\lambda} (\tau) = \cosh \tau - 1 \]
+
+\[t_{\lambda} (\tau) = \sinh \tau \]
+
+\[\tau_{f} = 2 ~ \text{arcosh} (d/2 +1) \]
+
+\[t_{f} = \sqrt{d (d + 4)} \]
+
+Put those last two equations in desmos and tell me that shit ain't crazy.
 </p>

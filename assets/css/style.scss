@@ -6,3 +6,31 @@
 h1 {
     font-size: 20px !important;
 }
+
+/* Fixed width for the left sidebar (site title and footer) */
+.site-title-small {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 200px; /* Fixed width for the left section */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.site-footer-small {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px; /* Match the width of the site title */
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Ensure the content area respects the left section's width */
+.paper-content {
+  max-width: 700px; /* Set a readable max width for content */
+  margin: 0 auto;
+  margin-left: 240px; /* Add spacing to avoid overlap with the left section */
+  padding: 20px;
+  box-sizing: border-box;
+}

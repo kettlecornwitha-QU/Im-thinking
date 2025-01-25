@@ -26,6 +26,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
     <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+    
+    <script type="text/x-mathjax-config">
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   </head>
   <body>
     <div class="wrapper">

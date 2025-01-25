@@ -1,9 +1,24 @@
 ---
-layout: default
+layout: paper
 title: Chain Rule Derivation
 ---
 
 <h1>Chain Rule Derivation</h1>
 <p>
     <a href="{{ '/papers/Chain_Rule.pdf' | relative_url }}" target="_blank">View the PDF</a>
+</p>
+
+<p>
+Let \(\gamma\) be a curve in \(\mathbb R^n\) given by the differentiable vector-valued function \(\mathbf v(t)\) where \(\mathbf v\) has \(n\) components \(v^\mu\), each a differentiable function of \(t\).  Let \(f (\mathbf x )\) be a differentiable scalar function on \(\mathbb R^n\), and let \(f (\mathbf v (t) )\) be the composition of functions \(f(\mathbf x)\) and \(\mathbf v (t)\), <i>i.e.</i> \(f\) evaluated on \(\gamma\).  We want to find the derivative of \(f\) as we move along \(\gamma\): \[ \frac{\mathrm df}{\mathrm dt} := \lim_{\Delta t \rightarrow 0} {\frac{f(\mathbf v (t_0 + \Delta t)) - f(\mathbf v_0)}{\Delta t}} \] where \(\mathbf v_0 := \mathbf v (t_0)\).
+</p>
+<p>
+Let's begin by defining the vector \(\Delta \mathbf v := \mathbf v(t_0 + \Delta t) - \mathbf v_0 \equiv \Delta v^\mu \hat x_\mu\).  Now let's imagine the graph of \(f\) fully represented in \(\mathbb R^{n+1}\).  We can imagine the tangent space to this graph at any given point \(\mathbf x_0\) as a hyperplane defined by the graph of \[ g_{\mathbf x_0}(\mathbf x) := \frac{\partial f}{\partial x^\mu} (x^\mu - x^\mu_0) + f(\mathbf x_0) \] Another way to say this is that \(f\) can be linearly approximated by the first two terms of its Taylor expansion (which is all that \(g\) is).  Let's now define \(\Delta f := f(\mathbf v(t_0 + \Delta t)) - f(\mathbf v_0)\).  \(\Delta f\) can be linearly approximated using \(g_{\mathbf v_0}\):
+\begin{equation*}
+\begin{split}
+\Delta f & \approx g_{\mathbf v_0}(\mathbf v(t_0 + \Delta t)) - g_{\mathbf v_0}(\mathbf v_0) \\
+& \approx \frac{\partial f}{\partial x^\mu} (v^\mu (t_0 + \Delta t) - v^\mu_0) + f(\mathbf v_0) - f(\mathbf v_0) \\
+& \approx \frac{\partial f}{\partial x^\mu} \Delta v^\mu
+\end{split}
+\end{equation*}
+We can turn this approximation into an exact equality simply by introducing some additional functions: \[\Delta f = \frac{\partial f}{\partial x^\mu} \Delta v^\mu + \epsilon_\mu \Delta v^\mu \] where each \(\epsilon\) is some corrective function that approaches zero as \(\Delta v^\mu\) approaches zero.  This should make intuitive sense because as \(\Delta v^\mu\) approaches zero, the relevant patch of the graph of \(f\) is increasingly better approximated by the tangent hyperplane.  Let us now divide this equation by \(\Delta t\): \[ \frac{\Delta f}{\Delta t} = \frac{\partial f}{\partial x^\mu} \frac{\Delta v^\mu}{\Delta t} + \epsilon_\mu \frac{\Delta v^\mu}{\Delta t} \] With how we defined \(\Delta f\), it should be clear that taking the limit here as \(\Delta t \rightarrow 0\) yields the derivative we were looking for.  It should also be noted that as \(\Delta t \rightarrow 0\), \(\Delta v^\mu \rightarrow 0\) as well, which means that the \(\epsilon_\mu\) functions vanish.  So we are left with \[ \frac{\mathrm df}{\mathrm dt} = \frac{\partial f}{\partial x^\mu} \frac{\mathrm dv^\mu}{\mathrm dt} \]
 </p>
