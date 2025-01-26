@@ -22,15 +22,44 @@ h1 {
   bottom: 20px;
   left: 20px;
   width: 200px; /* Match the width of the site title */
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
 /* Ensure the content area respects the left section's width */
 .paper-content {
-  max-width: 700px; /* Set a readable max width for content */
+  max-width: 893px; /* Set a readable max width for content */
   margin: 0 auto;
   margin-left: 240px; /* Add spacing to avoid overlap with the left section */
   padding: 20px;
   box-sizing: border-box;
+}
+
+/* Responsive design: stack layout for smaller screens */
+@media screen and (max-width: 961px) {
+  .site-title-small,
+  .site-footer-small {
+    position: relative; /* Remove fixed positioning */
+    width: auto;        /* Adjust width to align with content */
+    margin: 0 auto;     /* Center the block by default */
+    padding: 0 auto;    /* Add consistent padding for alignment */
+    text-align: left;   /* Align text with the left edge */
+  }
+
+  .site-title-small {
+    margin-bottom: 20px; /* Add space below the title */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .site-footer-small {
+    margin-top: 30px; /* Add space above the footer */
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .paper-content {
+    margin: 0 auto; /* Center-align the content */
+    padding: 20px;
+  }
 }
