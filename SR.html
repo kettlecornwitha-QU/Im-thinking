@@ -1,9 +1,73 @@
 ---
-layout: default
+layout: paper
 title: Lorentz Transformation Derivation
 ---
 
 <h1>Lorentz Transformation Derivation</h1>
 <p>
     <a href="{{ '/papers/SR.pdf' | relative_url }}" target="_blank">View the PDF</a>
+</p>
+
+<p>
+<b>Postulates:</b>
+<br>
+1. The laws of physics take the same form in all <a href="#def_inertial" id="marker_inertial"><b>inertial</b></a> frames of reference (<i>i.e.</i> points of view).
+<br>
+2. All inertial observers measure the speed of light \((c)\) to be the same regardless of relative velocity to the source of the light.
+</p>
+<p>
+Let's set up some simple inertial coordinates to describe what happens on one dimension of space, <i>i.e.</i> a straight line, and when it happens.  We should only need two coordinates for this: \(x\) for how far from the spatial origin \((x=0)\) it happens, and \(t\) for how long before or after the temporal origin \((t=0)\) it happens.  The origin of our coordinates \((t=0\) and \(x=0)\) can be marked by any <a href="#def_event" id="marker_event"><b>event</b></a> convenient for us.  We won't choose units, we will only impose a single restriction on them: 1 unit of space is equal to the distance light travels in 1 unit of time.  So all rays of light on our coordinates will look like straight lines at 45 degree angles.  Also, they can be represented by equations of the form \(t = \pm x + b\) where the plus or minus represents whether the light is moving to the right or left respectively, and \(b\) is the time that the light crosses the spatial origin.
+</p>
+<p>
+These coordinates are particularly well suited for an inertial observer planted at the spatial origin, so let's put you there and say that this coordinate system is yours.  I will put myself in this one-dimensional universe also, but I will be in motion relative to you (with constant velocity, \(v) . \)  Let's make the origin of your coordinates the event where I pass you.  This would mean that my <a href="#def_worldline" id="marker_worldline"><b>worldline</b></a>, in your coordinates, is given by \(x = vt . \)  In the same way we constructed a coordinate system for you, we'll make one for me, but I will call my coordinates \(x'\) and \(t' . \)  This coordinate system will be better suited to me since at all times I will be located at my spatial origin (<i>i.e.</i> in my coordinates, my worldline is given by \(x'=0) . \)  I will also set my origin to be the event where I pass you (though from my point of view, I might consider you to be passing me).  The goal of what we're doing here is to find a suitable coordinate transformation&mdash; <i>i.e.</i> a system of equations that takes as input your coordinates for a given event and outputs my coordinates for that same event, and vice versa.
+</p>
+<p>
+Let's look at a simple example of what a coordinate transformation can look like.  In Galilean relativity, our second postulate can be replaced with ''the flow of time is equal for all observers''.  In this case, the transformation can be given by these two equations: \(x' = x - vt\) and \(t' = t . \)
+</p>
+<p>
+With the way we've constructed our two coordinate systems, the events that you consider to be simultaneous will have the same \(t\) value, and events that I consider to be simultaneous will have the same \(t'\) value.  It's important to note, however, that, unlike Galileo, I have not assumed that if two events are simultaneous for you, that they will also be simultaneous for me.
+</p>
+<p>
+Let's now look at some of the implications of our postulates.  From the first postulate, we know that if you and I are both inertial observers, then even if we are in motion relative to one another, we will always agree on which objects are inertial (and therefore also that they have constant velocity relative to us).  Let me explain why: iff something is not inertial, <i>i.e.</i> it is accelerating, then there must be some non-zero physical force being applied to it.  If you perceive an object to be moving with constant velocity while I perceive it to be accelerating, then you will say no net force is being applied to the object while I will need to invent a physical force to explain why the object is accelerating.  But if you and I are both inertial observers, and I have to invent a physical force while you do not, then we've broken our first postulate.  In inertial coordinate systems, the worldlines of objects with constant velocity are straight lines.  Since both of our coordinate systems are inertial, we need to look for a transformation that maps all straight lines to other straight lines.  The type of transformation that does this is called a linear transformation.  In our case, the most general linear transformation that makes no assumptions whatsoever would look like this:\begin{eqnarray}
+x' = Ax + Bt
+\end{eqnarray}
+\begin{eqnarray}
+t' = Cx + Dt
+\end{eqnarray}
+Using only our postulates, it will be our job to find out what the coefficients \(A, ~ B, ~ C,\) and \(D\) could be.<sup><a href="#footnote1" id="marker1">1</a></sup>  Also from the first postulate, we know that the transformation to get from your coordinates to mine should be the same as that to get from my coordinates to yours, so we also have
+\begin{eqnarray}
+x = Ax' + Bt'
+\end{eqnarray}
+\begin{eqnarray}
+t = Cx' + Dt'
+\end{eqnarray}
+To make use of the second postulate, let's add something to the line we inhabit: at the event where we pass each other, let's emit two pulses of light&mdash; one to the right, and one to the left.  In your coordinates, the equations that describe these two light rays are simply \(x = t\) and \(x = -t\) respectively.  Because of the second postulate and because our origins coincide, the equations in my coordinates are \(x' = t'\) and \(x' = -t' . \)
+</p>
+<p>
+If we plot these lines and axes on a piece of paper, it's called a spacetime diagram.  There are four lines on our spacetime diagram&mdash;the two light rays and our two worldlines&mdash;and we know how all of them transform (<i>i.e.</i> we know their equations in both sets of coordinates).  The trick is to use these lines to determine how all points transform, not just the points on those lines.  We will only need three of them: my worldline and the two light rays.  Using my worldline, we know that when a point has \(x = vt , \) then in my coordinates, it must have \(x' = 0\) (<i>i.e.</i> \(x = vt \Leftrightarrow x' =0) . \)  Using the light rays, we know that points where \(x = t\) or \(x = -t , \) in my coordinates, they must have \(x' = t'\) or \(x' = -t'\) respectively \((x = t \Leftrightarrow x' = t'\) and \(x = -t \Leftrightarrow x' = -t') . \)
+</p>
+<p>
+Let's start with \(x = vt \Leftrightarrow x' = 0 . \)  Plugging those into eq. 1 gives \(B = -Av . \)  Using this, \(x = t \Leftrightarrow x' = t' , \) and eqs. 1 & 2, we get \(D = A(1-v) - C , \) then similarly using \(x = -t \Leftrightarrow x' = -t'\) gives \(D = A(1+v) + C . \)  Using those two equations gives us \(C = -Av . \)  Once again using \(x = t \Leftrightarrow x' = t'\) and eqs. 1 & 2, we get \(D = A . \)  We now only have one mystery coefficient to solve for: \(A . \)  Let's use eqs. 3 & 4, but update them with what we know about the coefficients.  Here we need to use care because, while I did say that the transformation to get from my coordinates to yours should be the same as that to get from yours to mine, we now know that the transformation depends (at least in part) upon our relative velocity.  Of course we will agree on our relative speed, <i>i.e.</i> the absolute value of the velocity.  However, if you see me moving from your left to your right, and I perceive you moving from my right to my left, then the signs on our relative velocities will be flipped.  So if you say our relative velocity is represented by “\(v\)”, then I would say our relative velocity is represented by “\(-v\)”.  If we update eqs. 3 & 4 using this fact, then we have \(x = A(x' + vt')\) and \(t = A(t' + vx') . \)  If we plug those into eqs. 1 & 2, it gets a tiny bit messy, but you end up with \(A = 1/\sqrt{1-v^2} . \)
+</p>
+<p>
+So there we have it: \(x' = (x-vt)/\sqrt{1-v^2}\) and \(t' = (t-vx)/\sqrt{1-v^2} . \)  This is called the Lorentz transformation.  From it we can derive the principle of the relativity of simultaneity and the equations for length contraction, time dilation, and relativistic velocity addition.
+</p>
+
+<!-- Definitions Section -->
+<hr>
+<b>Definitions:</b>
+<p id="def_inertial">
+  <i>Inertial:</i> Not experiencing any acceleration&mdash; <i>e.g.</i> An accelerating car is not inertial, nor is a car that's breaking. <a href="#marker_inertial">↩</a>
+</p>
+<p id="def_event">
+  <i>Event:</i> Something that happens at a single time in a single place, and can therefore be labeled with space and time coordinates <a href="#marker_event">↩</a>
+</p>
+<p id="def_worldline">
+  <i>Worldline:</i> A curve embedded in a space of at least two dimensions&mdash; one dimension of time and the rest spatial.  The curve represents an object's path through that space.  For example, a dot moving along a one dimensional line can be plotted as a curve on a two dimensional graph of position vs time. <a href="#marker_worldline">↩</a>
+</p>
+
+<!-- Footnotes Section -->
+<hr>
+<p id="footnote1">
+  <sup>1</sup> Since Galilean relativity also uses the first postulate, then its transformation should take this form as well, and indeed it does: \(x' = 1x + (-v)t , \) \(t' = 0x + 1t . \)  So in this case, \(A=1 , \) \(B=-v , \) \(C=0 , \) and \(D=1 . \) <a href="#marker1">↩</a>
 </p>

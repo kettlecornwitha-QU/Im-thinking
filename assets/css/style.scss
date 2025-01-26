@@ -35,6 +35,20 @@ h1 {
   box-sizing: border-box;
 }
 
+.center_38 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 38%;
+}
+
+.center_90 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
 /* Responsive design: stack layout for smaller screens */
 @media screen and (max-width: 961px) {
   .site-title-small,
