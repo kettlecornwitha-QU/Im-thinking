@@ -84,9 +84,15 @@ where \(i\) is a positive integer.  Let's now think of the sum not as a sum of 
 </p>
 <p>
 If we're successful in turning this into an integral, the interval over which we integrate would clearly be \(r\) to \(s . \)  Let's look at what happens to the heights of the rectangles.  Before rescaling, each rectangle had a height of \(1/(i \cdot r + j)\) where \(j\) is an integer that goes from 0 to \(i (s - r)\) and denotes which rectangle in the sum we're looking at.  After rescaling, the heights are \(1/(r + j/i) . \)  While \(j\) indicates how far to the right of \(i \cdot r\) any given original rectangle lies, \(j/i\) indicates how far to the right of \(r\) any given rescaled rectangle lies.  So think about the fact that the rectangle located at \(r + j/i\) has a height of \(1/(r + j/i) . \)  If we now just think of ''located at'' as ''with \(t =\)'' and ''height of the rectangle'' as ''value of \(f(t)\)'', it becomes clear that we are just integrating \(f(t) = 1/t\) over the interval \((r, s) . \)  We therefore have
-\[
-\lim_{n \rightarrow \infty} {P_q(n)} = \lim_{n \rightarrow \infty} {\sum_{t = \lceil q \cdot n \rceil}^{n} {\frac{1}{t}}} = \lim_{i \rightarrow \infty} {\sum_{t = i \cdot r}^{i \cdot s} {\frac{1}{t}}} = \int_{r}^{s} {\frac{1}{t} ~ dt} = \ln(s/r) = \ln(1/q)
-\]
+\begin{equation*}
+  \begin{split}
+    \lim_{n \rightarrow \infty} {P_q(n)} & = \lim_{n \rightarrow \infty} {\sum_{t = \lceil q \cdot n \rceil}^{n} {\frac{1}{t}}} \\
+    & = \lim_{i \rightarrow \infty} {\sum_{t = i \cdot r}^{i \cdot s} {\frac{1}{t}}} \\
+    & = \int_{r}^{s} {\frac{1}{t} ~ dt} \\
+    & = \ln(s/r) \\
+    & = \ln(1/q)
+  \end{split}
+\end{equation*}
 </p>
 <p>
 Let's bring this back to the riddle.  What we've just derived is the probability that any given card placement generates a loop that contains at least \(q \cdot n\) cards for any \(q : ~ 1/2 < q \leq 1 . \)  And if the warden only allows each prisoner to open less than, but arbitrarily close to \(q \cdot n\) boxes, then this is also the probability of failure.  So the probability of success is simply \(1 - \ln(1/q) . \) And if the warden allows each prisoner to open exactly one-half of the boxes, then the chance of success is
