@@ -24,6 +24,8 @@ What stuff am I thinking about, you ask?  See for yourself:
   *If you're like me, you use the chain rule all the time, but you've never seen for yourself whether it checks out or not.  Turns out it does!*
 - [Crocheting Hyperbolic Discs]({{ '/Hyperbolic_Crochet.html' | relative_url }})\
   *I don't crochet much, but when I do, I crochet hyperbolic discs.*
+- [Random Thoughts]({{ '/Random_Thoughts.html' | relative_url }})\
+  *A junk drawer full of my smaller thoughts*
 
 
 

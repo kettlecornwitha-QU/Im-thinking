@@ -3,7 +3,7 @@ email: kettle.corn.with.a.Q.U@gmail.com
 description: >-
   Do you ever think about stuff? Because I sure do.
 url: "https://kettlecornwitha-QU.github.io"
-baseurl: "/Im-thinking"
+#baseurl: "/Im-thinking"
 remote_theme: pages-themes/minimal
 markdown: kramdown
 include:
