@@ -8,6 +8,18 @@ title: About my General Relativity Tensor Calculator
 If you have a metric tensor, and you want to know what the non-zero components of the inverse metric, the partial derivatives of the metric, the Christoffel symbols, the partial derivatives of the Christoffel symbols, the Riemann curvature tensor, the Ricci curvature tensor, the Ricci scalar, and the Einstein tensor are, and you don't want to use four whole pages of paper and hours of your time and risk making a mistake in any of the thousands of possible places you can make a mistake, then this calculator is for you!  It even allows you to include an alternate basis of your choosing in addition to the default coordinate basis!
 </p>
 <p>
+The dimensionality of the manifold is up to you (though if you want your manifold to have more than 4 dimensions, you'll be in trouble; <a href="#warning">see below</a>).  The coordinate labels are also up to you; you can type in simple ones like &ldquo;x&rdquo;, &ldquo;y&rdquo;, or &ldquo;z&rdquo;, but you can also type things like &ldquo;theta&rdquo; or &ldquo;phi&rdquo;, or any other Greek characters you can think of.  Just don't put numerals in your coordinate labels.
+</p>
+<p>
+When entering mathematical expressions for your metric components or alternate basis vector components, my calculator does not recognize implicit multiplication, so make sure you're using those asterisks liberally!  Also, if you want to include undefined functions in those expressions, you can!  Just be sure to state which coordinate(s) the function is a function <i>of</i>.  For example, if your coordinate labels are &ldquo;t&rdquo;, &ldquo;l&rdquo;, &ldquo;theta&rdquo; and &ldquo;phi&rdquo;, if you want, you can make one of the metric components &ldquo;r(l)^2&rdquo;, where r is some undefined function of l.
+</p>
+<p>
+If you choose to include an alternate basis, the components of the alternate basis vectors should be in terms of the coordinate basis.  For example, in the case of cartesian coordinates (x and y) on a flat plane, if you wanted to include an alternate basis to reflect that of polar coordinates, for the basis vector components, you'd enter &ldquo;x/(x^2+y^2)^(1/2)&rdquo; and &ldquo;y/(x^2+y^2)^(1/2)&rdquo; as the x and y components (respectively) of the radial basis vector, and &ldquo;-y&rdquo; and &ldquo;x&rdquo; as the x and y components of the angular basis vector.
+</p>
+<p>
+When the calculator displays an indexed symbol, the indices will be taken from the coordinates themselves when the object is in terms of the coordinate basis, whereas, when in terms of the alternate basis, the indices will be taken from the integers 0 to n-1, where n is the dimensionality of the manifold.
+</p>
+<p id="warning">
 One thing to keep in mind&mdash; I'm hosting my backend Python code that does the actual calculating on a free server.  For all but the simpler 4-dimensional manifolds, the server forces the backend to time-out before it can complete the calculations, so you likely won't get a result for moderately complicated 4-dimensional manifolds.  That being said, it's able to handle most 2- and 3-dimensional manifolds alright.
 </p>
 <p>
