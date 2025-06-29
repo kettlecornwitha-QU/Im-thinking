@@ -11,6 +11,7 @@ What stuff am I thinking about, you ask?  See for yourself:
 - [Tensor Calculator](https://kettlecornwitha-qu.github.io/tensor-calculator/) - [About]({{ '/TC_About.html' | relative_url }})\
 *I was thinking about making a general relativity tensor calculator, and then I made a general relativity tensor calculator!*
 - [Maze Generator](https://maze-frontend-ynwr.onrender.com) - [About]({{ '/MG_About.html' | relative_url }})\
+*My kids were asking me to draw mazes for them, so I started thinking that there's gotta be a way to automate this process.*
 - [Birkhoff and Schwarzschild]({{ '/Birkhoff.html' | relative_url }})\
   *A quick proof of Birkhoff’s theorem (showing that any spherically symmetric vacuum solution to Einstein’s field equations must also be static) as well as a derivation of the Schwarzschild metric*
 - [Proper vs. Coordinate Time with Constant Acceleration]({{ '/Constant_Acceleration_Travel_Times.html' | relative_url }})\
