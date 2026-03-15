@@ -4,7 +4,7 @@ description: >-
   Do you ever think about stuff? Because I sure do.
 url: "https://kettlecornwitha-QU.github.io"
 #baseurl: "/Im-thinking"
-remote_theme: pages-themes/minimal
+theme: jekyll-theme-minimal
 markdown: kramdown
 include:
   - papers
@@ -13,7 +13,6 @@ kramdown:
     input: GFM
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
 sass:

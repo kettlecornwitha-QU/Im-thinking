@@ -1,6 +1,7 @@
 ---
 layout: paper
 title: Crocheting Hyperbolic Discs
+permalink: /Hyperbolic_Crochet.html
 ---
 
 <h1>Crocheting Hyperbolic Discs</h1>
@@ -44,7 +45,7 @@ Like I said, having a fixed ratio of increase to normal stitches works in the li
 Let's use \(C_n\) to refer to the circumference of the middle of row \(n\) (where \(r\) is halfway between the bottom and top edges of that row of stitches), and we will define \(\mu (n)\) to be the ratio of the circumference of row \(n\) to that of the row below it, <i>i.e.</i> \(\mu (n) := C_n / C_{n-1} . \)  The implicit assumption made by those who instruct us to use a fixed \(X:Y\) throughout the entire disc is that this \(\mu\) is equivalent to their \(m\) and ought to be a constant rather than dependent upon \(n . \)  But if we assume for now that it is in fact dependent, it should be obvious that the mathematical expression for my claim above would be \(m \equiv \lim_{n \rightarrow \infty} \mu (n) . \)  Before I derive an equation for \(C_n , \) I need to briefly describe the first row of stitches, <i>i.e.</i> the starting ring.  There will be an empty circle in the middle with radius \(r_o\) whose outer border is the bottom of the first row of stitches.  Then there will be the first row of stitches themselves with a height of \(h . \)  Let's say that \(r_o = h/2 . \)  This is probably as good of an approximation as you can get given the variability in different people's crochet technique, but it will also make the math cleaner.  Anyway, its exact value becomes increasingly unimportant the further out you crochet.
 </p>
 <p>
-<img src="{{ '/r_o.jpg' | relative_url }}" class="center_38">
+<img src="{{ '/assets/img/r_o.jpg' | relative_url }}" class="center_38">
 </p>
 <p>
 So now we can derive an equation for \(C_n . \)  Because we are assuming \(r_o = h/2 , \) the middle of row \(n\) will have \(r=n \cdot h . \)  The circumference of a circle in the hyperbolic plane with radius \(r , \) which we can read directly from the line element, is \(2\pi \sinh r . \)  Therefore, \(C_n = 2\pi \sinh (n \cdot h) , \) which also gives us \(\mu (n) = \sinh (n \cdot h) / \sinh (n \cdot h - h) . \)  We should immediately notice that \(\mu\) is indeed dependent upon \(n . \)  This at least shows that the assumption \(\mu =\) const. is clearly false, but we have yet to show that \(\lim_{n \rightarrow \infty} \mu (n) = \mathrm{const} . \)  Since \(\sinh r \equiv (e^{2r} - 1)/2e^r\) we have
