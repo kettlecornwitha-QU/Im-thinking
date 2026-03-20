@@ -2,9 +2,16 @@ title: "I'm thinking about stuff"
 email: kettle.corn.with.a.Q.U@gmail.com
 description: >-
   Do you ever think about stuff? Because I sure do.
+seo_description: >-
+  Luke Walker writes about relativity, mathematical physics, philosophy, math riddles, and coding projects including a relativistic ray tracer and tensor calculator.
 url: "https://kettlecornwitha-QU.github.io"
 #baseurl: "/Im-thinking"
 theme: jekyll-theme-minimal
+lang: en-US
+logo: /assets/img/logo.png
+author:
+  name: Luke Walker
+  email: kettle.corn.with.a.Q.U@gmail.com
 markdown: kramdown
 include:
   - papers

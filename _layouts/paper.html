@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 <head>
+  {% assign canonical_url = page.url | absolute_url %}
+  {% assign page_description = page.description | default: page.excerpt | default: content | strip_html | normalize_whitespace | truncate: 160 %}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCXLGP2S5S"></script>
   <script>
@@ -14,6 +16,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="{{ canonical_url }}">
     
   <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     
@@ -32,6 +38,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ page.title | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": {{ site.author.name | jsonify }},
+        "url": {{ '/about/' | absolute_url | jsonify }}
+      },
+      "url": {{ canonical_url | jsonify }},
+      "description": {{ page_description | jsonify }},
+      "mainEntityOfPage": {{ canonical_url | jsonify }}
+    }
+  </script>
     
     <script type="text/x-mathjax-config">
         MathJax = {
@@ -63,10 +84,8 @@
       {{ content }}
     </div>
     
-<footer>
-  <footer class="site-footer-small" style="white-space: nowrap;">
+<footer class="site-footer-small" style="white-space: nowrap;">
     <p><a href="{{ '/about' | relative_url }}">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="{{ '/' | relative_url }}">Stuff</a></p>
-  </footer>
 </footer>
 
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

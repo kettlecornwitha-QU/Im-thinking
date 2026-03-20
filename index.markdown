@@ -1,12 +1,13 @@
 ---
 layout: default
 title: "I'm thinking about stuff"
+description: "Luke Walker writes about relativity, mathematical physics, philosophy, math riddles, and software projects including a relativistic ray tracer and tensor calculator."
 ---
 
 
 What stuff am I thinking about, you ask?  See for yourself:
 
-## Stuff
+## Projects
 
 - [Relativistic Ray Tracer](https://github.com/kettlecornwitha-QU/SR-RT_engine) - [About]({{ '/SR-RT_About.html' | relative_url }})\
 *I was thinking about what it would look like to travel close to the speed of light, and that thinking led me to actually want to see it. So I made a special-relativity-accurate ray tracing rendering engine!*
@@ -16,6 +17,8 @@ What stuff am I thinking about, you ask?  See for yourself:
 *My kids were asking me to draw mazes for them, so I started thinking that there's gotta be a way to automate this process.*
 - [Battleship Helper](https://kettlecornwitha-qu.github.io/bship_frontend/) - [About]({{ '/BH_About.html' | relative_url }})\
 *I was thinking about optimizing Battleship strategy, and now you don't have to think about it at all!*
+
+## Articles
 - [Birkhoff and Schwarzschild]({{ '/Birkhoff.html' | relative_url }})\
   *A quick proof of Birkhoff’s theorem (showing that any spherically symmetric vacuum solution to Einstein’s field equations must also be static) as well as a derivation of the Schwarzschild metric*
 - [Proper vs. Coordinate Time with Constant Acceleration]({{ '/Constant_Acceleration_Travel_Times.html' | relative_url }})\
@@ -34,7 +37,5 @@ What stuff am I thinking about, you ask?  See for yourself:
   *I don't crochet much, but when I do, I crochet hyperbolic discs.*
 - [Random Thoughts]({{ '/Random_Thoughts.html' | relative_url }})\
   *A junk drawer full of my smaller thoughts*
-
-
 
 

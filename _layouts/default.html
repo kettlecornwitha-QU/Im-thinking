@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    {% assign canonical_url = page.url | absolute_url %}
+    {% assign page_description = page.description | default: page.excerpt | default: site.seo_description | default: site.description | strip_html | normalize_whitespace | truncate: 160 %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCXLGP2S5S"></script>
     <script>
@@ -15,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% seo %}
-    <meta name="description" content="A website where I explore things like general relativity, special relativity, Birkhoff's theorem, Schwarzschild spacetime, math riddles, philosophy of time, crocheting hyperbolic discs, and other interesting things">
-    <meta name="keywords" content="general relativity, special relativity, Birkhoff's theorem, Schwarzschild spacetime, proper time, coordinate time, prisoners riddle, Levi-Civita connection, covariant derivative, Lorentz transformation, time, philosophy, crochet, hyperbolic geometry">
+    <meta name="description" content="{{ page_description }}">
     <meta name="author" content="Luke Walker">
+    <meta name="robots" content="index,follow,max-image-preview:large">
     
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
@@ -39,6 +41,56 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
     <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {% if page.url == "/" %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | jsonify }},
+        "description": {{ site.seo_description | default: site.description | strip_html | normalize_whitespace | jsonify }},
+        "publisher": {
+          "@type": "Person",
+          "name": {{ site.author.name | jsonify }},
+          "url": {{ '/about/' | absolute_url | jsonify }}
+        }
+      }
+    </script>
+    {% elsif page.url == "/about/" %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": {{ site.author.name | jsonify }},
+        "url": {{ canonical_url | jsonify }},
+        "description": {{ page_description | jsonify }},
+        "email": {{ site.author.email | prepend: "mailto:" | jsonify }},
+        "image": {{ site.logo | absolute_url | jsonify }}
+      }
+    </script>
+    {% else %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": {{ page.title | default: site.title | jsonify }},
+        "url": {{ canonical_url | jsonify }},
+        "description": {{ page_description | jsonify }},
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": {{ site.title | jsonify }},
+          "url": {{ site.url | jsonify }}
+        },
+        "author": {
+          "@type": "Person",
+          "name": {{ site.author.name | jsonify }},
+          "url": {{ '/about/' | absolute_url | jsonify }}
+        }
+      }
+    </script>
+    {% endif %}
     
     <script type="text/x-mathjax-config">
         MathJax = {
@@ -62,7 +114,6 @@
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
 <!--        
         <nav class="site-links">
           <p><a href="{{ '/about' | relative_url }}">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="{{ '/' | relative_url }}">Stuff</a></p>
@@ -82,10 +133,8 @@
 
       </section>
 
-<footer>
-  <footer class="site-footer" style="white-space: nowrap;">
+<footer class="site-footer" style="white-space: nowrap;">
     <p><a href="{{ '/about' | relative_url }}">About Me</a> | <a href="mailto:kettle.corn.with.a.Q.U@gmail.com">Contact Me</a> | <a href="{{ '/' | relative_url }}">Stuff</a></p>
-  </footer>
 </footer>
 
     </div>
