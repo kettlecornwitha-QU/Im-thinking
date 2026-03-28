@@ -11,7 +11,7 @@ What stuff am I thinking about, you ask?  See for yourself:
 
 - [Relativistic Ray Tracer](https://github.com/kettlecornwitha-QU/SR-RT_engine) - [About]({{ '/SR-RT_About.html' | relative_url }})\
 *I was thinking about what it would look like to travel close to the speed of light, and that thinking led me to actually want to see it. So I made a special-relativity-accurate ray tracing rendering engine!*
-- [Tensor Calculator](https://kettlecornwitha-qu.github.io/tensor-calculator/) - [About]({{ '/TC_About.html' | relative_url }})\
+- **Tensor Calculator** - [online version](https://kettlecornwitha-qu.github.io/tensor-calculator/) - [local version](https://github.com/kettlecornwitha-QU/tensor-calculator-local/releases) - [About]({{ '/TC_About.html' | relative_url }})\
 *I was thinking about making a general relativity tensor calculator, and then I made a general relativity tensor calculator!*
 - [Maze Generator](https://maze-frontend-ynwr.onrender.com) - [About]({{ '/MG_About.html' | relative_url }})\
 *My kids were asking me to draw mazes for them, so I started thinking that there's gotta be a way to automate this process.*
